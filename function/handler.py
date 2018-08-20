@@ -22,7 +22,7 @@ def handle(req):
     #resp = Response(str_rep, status=200, mimetype='application/json')
     #return resp
    
-    log.debug('Data: ' + str(request.data))
-    log.debug('Dict: ' + str(request.__dict__))
+    log.debug('Data: ' + str(req.data))
+    log.debug('Dict: ' + str(req.__dict__))
 
-    return  'Received Message: ' + str(request.data)
+    return  'Received Message: ' + str(req.data)
