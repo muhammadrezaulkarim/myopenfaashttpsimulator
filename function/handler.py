@@ -10,14 +10,17 @@ def handle(req):
         req (str): request body
     """
     #convert the json representation into a python object
-    json_req = json.loads(req)
+    #json_req = json.loads(req)
     
     # extract key and value
-    result = {"key": json_req["key"], "value": json_req["value"]}
+    #result = {"key": json_req["key"], "value": json_req["value"]}
     
     # serialize to a JSON formatted string 
-    str_rep = json.dumps(result)
-    log.debug('Received Message: ' + str_rep)
-    resp = Response(str_rep, status=200, mimetype='application/json')
+    #str_rep = json.dumps(result)
+    #log.debug('Received Message: ' + str_rep)
+    #resp = Response(str_rep, status=200, mimetype='application/json')
+    #return resp
+    
+    log.debug('Received Message: ' + str(req))
 
-    return resp
+    return  'Received Message: ' + str(req)
