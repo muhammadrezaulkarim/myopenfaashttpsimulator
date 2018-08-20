@@ -7,6 +7,7 @@ from function import handler
 from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
+app.debug = True
 
 @app.route("/", methods=["POST", "GET"])
 def main_route():
