@@ -11,7 +11,8 @@ app.debug = True
 
 @app.route("/", methods=["POST", "GET"])
 def main_route():
-    ret = handler.handle(request.get_data())
+    #ret = handler.handle(request.get_data())
+    ret = handler.handle(request)
     return ret
 
 if __name__ == '__main__':
