@@ -21,7 +21,8 @@ def handle(req):
     #log.debug('Received Message: ' + str_rep)
     #resp = Response(str_rep, status=200, mimetype='application/json')
     #return resp
-    
-    log.debug('Received Message: ' + str(req))
+   
+    log.debug('Data: ' + str(request.data))
+    log.debug('Dict: ' + str(request.__dict__))
 
-    return  'Received Message: ' + str(req)
+    return  'Received Message: ' + str(request.data)
