@@ -3,6 +3,7 @@ from flask import Response
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
+log = logging.getLogger(__name__)
 
 def handle(req):
     """handle a request to the function
