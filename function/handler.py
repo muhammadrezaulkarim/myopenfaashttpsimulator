@@ -11,15 +11,15 @@ def handle(req):
         req (str): request body
     """
     
-    req_json = req.get_json(force=False, silent=True, cache=True)
+    req_json = req.get_json(force=True, silent=True, cache=True)
     if not req_json:
         log.debug('Request could not be processed. Json formatted data not vailable...')
         return 'Could not process data. Json formatted data not vailable...'
         
     #convert the json representation into a python object
-    #json_req = json.loads(req_json)
+    json_req = json.loads(req_json, strict=False)
     #requests.data contains the json in string format, so you can process the characters that needs to be escaped.
-    json_req = json.loads(request.data, strict=False)
+    #json_req = json.loads(request.data, strict=False)
     
     # extract key and value
     result = {"key": json_req["key"], "value": json_req["value"]}
