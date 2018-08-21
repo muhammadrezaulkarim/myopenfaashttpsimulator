@@ -17,7 +17,9 @@ def handle(req):
         return 'Could not process data. Json formatted data not vailable...'
         
     #convert the json representation into a python object
-    json_req = json.loads(req_json)
+    #json_req = json.loads(req_json)
+    #requests.data contains the json in string format, so you can process the characters that needs to be escaped.
+    json_req = json.loads(request.data, strict=False)
     
     # extract key and value
     result = {"key": json_req["key"], "value": json_req["value"]}
