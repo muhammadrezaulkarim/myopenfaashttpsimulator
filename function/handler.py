@@ -23,7 +23,7 @@ def handle(req):
     #resp = Response(str_rep, status=200, mimetype='application/json')
     #return resp
     #received_data = str(req.get_data(cache=True, as_text=True, parse_form_data=False))
-    raw_data = req.get_data(parse_form_data=False)
+    raw_data = req.get_data(parse_form_data=True)
     
     try:
         received_data = str(raw_data.decode("utf-8"))
