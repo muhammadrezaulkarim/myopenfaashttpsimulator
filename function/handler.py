@@ -10,21 +10,21 @@ def handle(req):
     Args:
         req (str): request body
     """
-    req_json=req.get_json(force=True, silent=False, cache=True)
+    #req_json=req.get_json(force=True, silent=False, cache=True)
     #convert the json representation into a python object
-    json_req = json.loads(req_json)
+    #json_req = json.loads(req_json)
     
     # extract key and value
-    result = {"key": json_req["key"], "value": json_req["value"]}
+    #result = {"key": json_req["key"], "value": json_req["value"]}
     
     # serialize to a JSON formatted string 
-    str_rep = json.dumps(result)
-    log.debug('Received Message: ' + str_rep)
+    #str_rep = json.dumps(result)
+    #log.debug('Received Message: ' + str_rep)
     #resp = Response(str_rep, status=200, mimetype='application/json')
     #return resp
-    #received_data = str(req.get_data(cache=True, as_text=True, parse_form_data=False))
-    #log.debug('Data: ' + received_data)
-    #log.debug('Dict: ' + str(req.__dict__))
+    received_data = str(req.get_data(cache=True, as_text=True, parse_form_data=False))
+    log.debug('Data: ' + received_data)
+    log.debug('Dict: ' + str(req.__dict__))
 
-    #return 'Received Message: ' + str(received_data)
-    return 'Received Message: ' + str_rep
+    return 'Received Message: ' + str(received_data)
+    #return 'Received Message: ' + str_rep
