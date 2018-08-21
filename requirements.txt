@@ -1,2 +1,2 @@
-flask
-gevent
+flask==1.0
+gevent==1.3.0
