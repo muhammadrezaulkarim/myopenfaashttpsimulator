@@ -7,12 +7,11 @@ from function import handler
 from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
-app.debug = True
 
-@app.route("/", methods=["POST", "GET"])
-def main_route():
-    #ret = handler.handle(request.get_data())
-    ret = handler.handle(request)
+@app.route("/", defaults={"path": ""}, methods=["POST", "GET"])
+@app.route("/<path:path>", methods=["POST", "GET"])
+def main_route(path):
+    ret = handler.handle(request.get_data())
     return ret
 
 if __name__ == '__main__':
