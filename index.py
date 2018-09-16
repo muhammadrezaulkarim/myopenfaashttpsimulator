@@ -11,7 +11,8 @@ app = Flask(__name__)
 @app.route("/", defaults={"path": ""}, methods=["POST", "GET"])
 @app.route("/<path:path>", methods=["POST", "GET"])
 def main_route(path):
-    ret = handler.handle(request.get_data())
+    request.get_data()
+    ret = handler.handle(request)
     return ret
 
 if __name__ == '__main__':
